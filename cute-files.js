@@ -40,7 +40,7 @@ app.use('/', express.static(path.join(__dirname, 'frontend')));
 
 // Serve files from the current directory under the /files route
 
-var template = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/templates/code.html')).toString());
+var template = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/code.handlebars.html')).toString());
 
 app.use('/files', function(req, res) {
   res.send(template({ code: fs.readFileSync(path.join(__dirname, req.path)).toString() }))
