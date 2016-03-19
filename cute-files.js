@@ -1,12 +1,15 @@
 #!/usr/bin/env node
+"use strict"
 
 var path = require('path');
+var fs = require('fs');
 var express = require('express');
 var contentDisposition = require('content-disposition');
 var pkg = require( path.join(__dirname, 'package.json') );
 
 var scan = require('./scan');
 
+var Handlebars = require('handlebars')
 
 // Parse command line options
 
@@ -37,16 +40,13 @@ app.use('/', express.static(path.join(__dirname, 'frontend')));
 
 // Serve files from the current directory under the /files route
 
-app.use('/files', express.static(process.cwd(), {
-	index: false,
-	setHeaders: function(res, path){
+var template = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/templates/code.html')).toString());
 
-		// Set header to force files to download
+app.use('/files', function(req, res) {
+  res.send(template({ code: fs.readFileSync(path.join(__dirname, req.path)).toString() }))
+})
 
-		res.setHeader('Content-Disposition', contentDisposition(path))
-
-	}
-}));
+app.use('/static', express.static(__dirname + '/public'));
 
 // This endpoint is requested by our frontend JS
 
