@@ -6,7 +6,7 @@ $(function(){
 
 	// Start by fetching the file data from scan route with an AJAX request
 
-	$.get('scan', function(data) {
+	$.get('/scan', function(data) {
 
 		var response = [data],
 			currentPath = '',
@@ -18,15 +18,18 @@ $(function(){
 		// This event listener monitors changes on the URL. We use it to
 		// capture back/forward navigation in the browser.
 
-		$(window).on('hashchange', function(){
+		var hashchange = $(window).on('hashchange', function(){
 
 			goto(window.location.hash);
 
-			// We are triggering the event. This will execute 
+			// We are triggering the event. This will execute
 			// this function on page load, so that we show the correct folder:
 
-		}).trigger('hashchange');
+		})
 
+    if($('.home').length > 0) {
+      hashchange.trigger('hashchange');
+    }
 
 		// Hiding and showing the search box
 
@@ -312,7 +315,7 @@ $(function(){
 						itemsLength = 'Empty';
 					}
 
-					var folder = $('<li class="folders"><a href="'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></a></li>');
+					var folder = $('<li class="folders"><a href="/'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></a></li>');
 					folder.appendTo(fileList);
 				});
 
@@ -331,44 +334,42 @@ $(function(){
 
 					icon = '<span class="icon file f-' + fileType + '">' + fileType + '</span>';
 
-					var file = $('<li class="files"><a href="'+ f.path+'" title="'+ f.path +'" class="files">'+icon+'<span class="name">'+ name +'</span> <span class="details">'+fileSize+'</span></a></li>');
+					var file = $('<li class="files"><a href="/'+ f.path+'" title="'+ f.path +'" class="files">'+icon+'<span class="name">'+ name +'</span> <span class="details">'+fileSize+'</span></a></li>');
 					file.appendTo(fileList);
 				});
 
 			}
 
-
-			// Generate the breadcrumbs
+      // Generate the breadcrumbs
 
 			var url = '';
 
-			if(filemanager.hasClass('searching')){
+      if(filemanager.hasClass('searching')){
 
-				url = '<span>Search results: </span>';
-				fileList.removeClass('animated');
+        url = '<span>Search results: </span>';
+        fileList.removeClass('animated');
 
-			}
-			else {
+      }
+      else {
 
-				fileList.addClass('animated');
+        fileList.addClass('animated');
 
-				breadcrumbsUrls.forEach(function (u, i) {
+        breadcrumbsUrls.forEach(function (u, i) {
 
-					var name = u.split('/');
+          var name = u.split('/');
 
-					if (i !== breadcrumbsUrls.length - 1) {
-						url += '<a href="'+u+'"><span class="folderName">' + name[name.length-1] + '</span></a> <span class="arrow">→</span> ';
-					}
-					else {
-						url += '<span class="folderName">' + name[name.length-1] + '</span>';
-					}
+          if (i !== breadcrumbsUrls.length - 1) {
+            url += '<a href="'+u+'"><span class="folderName">' + name[name.length-1] + '</span></a> <span class="arrow">→</span> ';
+          }
+          else {
+            url += '<span class="folderName">' + name[name.length-1] + '</span>';
+          }
 
-				});
+        });
 
-			}
+      }
 
-			breadcrumbs.text('').append(url);
-
+      breadcrumbs.text('').append(url);
 
 			// Show the generated elements
 
