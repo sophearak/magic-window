@@ -4,7 +4,6 @@
 var path = require('path');
 var fs = require('fs');
 var express = require('express');
-var contentDisposition = require('content-disposition');
 var pkg = require( path.join(__dirname, 'package.json') );
 
 var scan = require('./scan');
@@ -59,4 +58,4 @@ app.get('/scan', function(req,res){
 
 app.listen(port);
 
-console.log('Cute files is running on port ' + port);
+console.log('Extraverse is running on port ' + port);

@@ -1,7 +1,7 @@
 {
   "name": "extraverse",
-  "version": "1.0.0",
-  "description": "Turn any folder on your computer into a cute file browser, available on the local network.",
+  "version": "1.0.1",
+  "description": "Turn any folder on your computer into a cute file editor, available on the local network.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,7 +20,6 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.3.0",
-    "content-disposition": "^0.3.0",
     "express": "^4.9.4",
     "handlebars": "^4.0.5"
   },
