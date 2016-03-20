@@ -1,7 +1,7 @@
 {
   "name": "extraverse",
   "version": "1.0.1",
-  "description": "Turn any folder on your computer into a cute file editor, available on the local network.",
+  "description": "Turn any folder on your computer into a cute file editor, available on local network or over the internet.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,8 @@
   "dependencies": {
     "commander": "^2.3.0",
     "express": "^4.9.4",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "ngrok": "^2.1.6"
   },
   "preferGlobal": true,
   "bin": {

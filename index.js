@@ -16,11 +16,11 @@ var program = require('commander');
 
 program
 	.version(pkg.version)
-	.option('-p, --port <port>', 'Port on which to listen to (defaults to 3000)', parseInt)
+  .option('-p, --port <port>', 'Port on which to listen to (defaults to 3000)', parseInt)
+	.option('-P, --public', 'Allow public access via ngrok')
 	.parse(process.argv);
 
 var port = program.port || 3000;
-
 
 // Scan the directory in which the script was called. It will
 // add the 'files/' prefix to all files and folders, so that
@@ -53,6 +53,14 @@ app.get('/scan', function(req,res){
 	res.send(tree);
 });
 
+// Share over ngrok if Public
+
+if (program.public) {
+  var ngrok = require('ngrok');
+  ngrok.connect(port, function (err, url) {
+    console.log('Public URL:', url);
+  });
+}
 
 // Everything is setup. Listen on the port.
 

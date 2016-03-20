@@ -36,6 +36,12 @@ Make the current folder available on `<yourip>:3000` on the local network:
 extraverse
 ```
 
+Allow public access:
+
+```bash
+extraverse --public
+```
+
 Make the current folder available on `<yourip>:12345` on the local network:
 
 ```bash
