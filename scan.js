@@ -12,6 +12,7 @@ module.exports = function scan(dir, alias){
 
 };
 
+const IGNORED = ['.git', 'node_modules', 'bower_components', 'tmp', 'log', 'Godeps', 'elm-stuff', 'deps', '_build', 'target', 'dist', 'deploy']
 
 function walk(dir, prefix){
 
@@ -23,7 +24,7 @@ function walk(dir, prefix){
 
 	return fs.readdirSync(dir).filter(function(f){
 
-		return f && f[0] != '.'; // Ignore hidden files
+		return f && f[0] != '.' && IGNORED.indexOf(f) == -1; // Ignore hidden files
 
 	}).map(function(f){
 
