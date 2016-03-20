@@ -42,6 +42,12 @@ Allow public access:
 extraverse --public
 ```
 
+Copy `ngrok` url to clipboard:
+
+```bash
+extraverse --public --copy
+```
+
 Make the current folder available on `<yourip>:12345` on the local network:
 
 ```bash

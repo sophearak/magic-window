@@ -1,6 +1,6 @@
 {
   "name": "extraverse",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Turn any folder on your computer into a cute file viewer/editor, available on local network or over the internet.",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,9 @@
   "author": "davidhq",
   "license": "MIT",
   "dependencies": {
+    "colors": "^1.1.2",
     "commander": "^2.3.0",
+    "copy-paste": "^1.1.4",
     "express": "^4.9.4",
     "handlebars": "^4.0.5",
     "ngrok": "^2.1.6"

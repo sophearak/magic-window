@@ -7,8 +7,9 @@ var express = require('express');
 var pkg = require( path.join(__dirname, 'package.json') );
 
 var scan = require('./scan');
-
+var copyPaste = require("copy-paste");
 var Handlebars = require('handlebars')
+var colors = require('colors')
 
 // Parse command line options
 
@@ -17,7 +18,8 @@ var program = require('commander');
 program
 	.version(pkg.version)
   .option('-p, --port <port>', 'Port on which to listen to (defaults to 3000)', parseInt)
-	.option('-P, --public', 'Allow public access via ngrok')
+  .option('-P, --public', 'Allow public access via ngrok')
+	.option('-c, --copy', 'Copy ngrok url to clipboard')
 	.parse(process.argv);
 
 var port = program.port || 3000;
@@ -58,7 +60,12 @@ app.get('/scan', function(req,res){
 if (program.public) {
   var ngrok = require('ngrok');
   ngrok.connect(port, function (err, url) {
-    console.log('Public URL:', url);
+    let copied = "";
+    if(program.copy) {
+      copied = "(copied to clipboard)"
+      copyPaste.copy(url);
+    }
+    console.log(`Public URL: ${colors.yellow(url)} ${colors.green(copied)}`);
   });
 }
 
