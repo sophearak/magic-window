@@ -1,20 +1,19 @@
-# Cute files
+# Extraverse
 
-This is a node.js command line utility that turns the current working directory into a pretty online file browser, available to all computers in the local network. It is an easy way to share a folder with your office buddies.
+This is a node.js command line utility that turns the current working directory into a pretty online file editor.
 
 ## Design and inspiration
 
-It is based on [tutorialzine's file browser tutorial](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/). See a live demo [here](http://demo.tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/).
-
+It is based on [martinaglv/cute-files](https://github.com/martinaglv/cute-files) which is based on [tutorialzine's file browser tutorial](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/). See a live demo [here](http://extraverse.bitcells.com).
 
 [![Cute files preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/)
-
 
 **Features:**
 
 * Beautiful css-only design.
 * Responsive and retina-ready.
 * Instant file search.
+* Syntax highlighting for 150+ computer languages
 * Easy to install and use.
 
 ## Installation
@@ -22,25 +21,25 @@ It is based on [tutorialzine's file browser tutorial](http://tutorialzine.com/20
 This utility is available on npm, so installation is a breeze. Use the **-g** flag:
 
 ```bash
-npm install -g cute-files
+npm install -g extraverse
 ```
 
 ## Usage
 
-To use it, `cd` into a directory, and run `cute-files` with an optional port.
+To use it, `cd` into a directory, and run `extraverse` with an optional port.
 
 ### Examples
 
 Make the current folder available on `<yourip>:3000` on the local network:
 
 ```bash
-cute-files
+extraverse
 ```
 
 Make the current folder available on `<yourip>:12345` on the local network:
 
 ```bash
-cute-files --port 12345
+extraverse --port 12345
 ```
 
 ### Notes

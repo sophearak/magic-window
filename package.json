@@ -1,8 +1,8 @@
 {
-  "name": "cute-files",
-  "version": "1.0.2",
+  "name": "extraverse",
+  "version": "1.0.0",
   "description": "Turn any folder on your computer into a cute file browser, available on the local network.",
-  "main": "cute-files.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,12 +14,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/martinaglv/cute-files"
+    "url": "https://github.com/uniqpath/extraverse"
   },
-  "author": {
-    "name": "Martin Angelov",
-    "email": "martin@tutorialzine.com"
-  },
+  "author": "davidhq",
   "license": "MIT",
   "dependencies": {
     "commander": "^2.3.0",
@@ -29,10 +26,10 @@
   },
   "preferGlobal": true,
   "bin": {
-    "cute-files": "cute-files.js"
+    "extraverse": "index.js"
   },
   "readmeFilename": "Readme.md",
   "engines": {
-    "node": ">= 0.10.x"
+    "node": ">=5.7.0"
   }
 }
