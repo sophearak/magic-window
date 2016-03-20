@@ -1,6 +1,6 @@
 # Extraverse
 
-This is a node.js command line utility that turns the current working directory into a pretty online file editor.
+This is a node.js command line utility that turns the current working directory into a pretty online file viewer/editor.
 
 ## Design and inspiration
 
@@ -13,7 +13,7 @@ It is based on [martinaglv/cute-files](https://github.com/martinaglv/cute-files)
 * Beautiful css-only design.
 * Responsive and retina-ready.
 * Instant file search.
-* Syntax highlighting for 150+ computer languages
+* Syntax highlighting for 150+ computer languages.
 * Easy to install and use.
 
 ## Installation

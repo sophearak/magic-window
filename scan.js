@@ -35,7 +35,7 @@ function walk(dir, prefix){
 			return {
 				name: f,
 				type: 'folder',
-				path: prefix + '/' + p,
+				path: prefix ? prefix + '/' + p : p,
 				items: walk(p, prefix)
 			};
 
@@ -44,7 +44,7 @@ function walk(dir, prefix){
 		return {
 			name: f,
 			type: 'file',
-			path: prefix + '/' + p,
+			path: prefix ? prefix + '/' + p : p,
 			size: stat.size
 		}
 
