@@ -1,7 +1,7 @@
 {
   "name": "extraverse",
-  "version": "1.0.4",
-  "description": "Turn any folder on your computer into a cute file viewer/editor, available on local network or over the internet.",
+  "version": "1.0.6",
+  "description": "Turn any folder on your computer into a magic window",
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
@@ -27,7 +27,6 @@
     "handlebars": "^4.0.5",
     "ngrok": "^2.1.6"
   },
-  "preferGlobal": true,
   "bin": {
     "extraverse": "index.js"
   },

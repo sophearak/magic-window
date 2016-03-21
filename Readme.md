@@ -26,7 +26,7 @@ npm install -g extraverse
 
 ## Usage
 
-To use it, `cd` into a directory, and run `extraverse` with an optional port.
+To use it, `cd` into a directory, and run `extraverse --public --copy`.
 
 ### Examples
 
