@@ -1,28 +1,30 @@
 "use strict"
 var fs = require('fs');
 
-module.exports = function scan(dir, alias){
+module.exports = function scan(dir, alias, depth){
 
 	return {
 		name: alias,
 		type: 'folder',
 		path: alias,
-		items: walk(dir, alias)
+		items: walk(dir, alias, depth+2)
 	};
 
 };
 
 const IGNORED = ['.git', 'node_modules', 'bower_components', 'tmp', 'log', 'Godeps', 'elm-stuff', 'deps', '_build', 'target', 'dist', 'deploy']
 
-function walk(dir, prefix){
+function walk(dir, prefix, depth){
 
 	prefix = prefix || '';
 
-	if(!fs.existsSync(dir)){
+  if(depth) depth--;
+
+	if(!fs.existsSync(dir) || depth == 0){
 		return [];
 	}
 
-	return fs.readdirSync(dir).filter(function(f){
+	return fs.readdirSync(dir).filter(function(f) {
 
 		return f && f[0] != '.' && IGNORED.indexOf(f) == -1; // Ignore hidden files
 
@@ -37,7 +39,7 @@ function walk(dir, prefix){
 				name: f,
 				type: 'folder',
 				path: prefix ? prefix + '/' + p : p,
-				items: walk(p, prefix)
+				items: walk(p, prefix, depth)
 			};
 
 		}
