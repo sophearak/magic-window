@@ -7,11 +7,11 @@
   <title>Extraverse</title>
 
   <!-- Include our stylesheet -->
-  <link href="/assets/css/styles.css" rel="stylesheet"/>
+  <link href="{{prefix}}/assets/css/styles.css" rel="stylesheet"/>
 
   <!-- Include highlight.js things -->
-  <link rel="stylesheet" href="/static/highlight/default.css">
-  <script src="/static/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" href="{{prefix}}/static/highlight/default.css">
+  <script src="{{prefix}}/static/highlight/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <style>
     body {
@@ -27,6 +27,7 @@
 
 </head>
 <body>
+  <div class="prefix">{{prefix}}</div>
 
   <div class="filemanager">
 
@@ -49,7 +50,7 @@
 
   <!-- Include our script files -->
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="/assets/js/script.js"></script>
+  <script src="{{prefix}}/assets/js/script.js"></script>
 
 </body>
 </html>

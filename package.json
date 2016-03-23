@@ -1,8 +1,8 @@
 {
   "name": "extraverse",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Turn any folder on your computer into a magic window",
-  "main": "index.js",
+  "main": "app.js",
   "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

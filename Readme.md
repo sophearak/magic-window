@@ -54,6 +54,16 @@ Make the current folder available on `<yourip>:12345` on the local network:
 extraverse --port 12345
 ```
 
+### Use inside your express.js app to reveal its source
+
+```bash
+npm install --save extraverse
+```
+
+```javascript
+app.use('/source', require('extraverse')('/source', { ignore: ['config'] }))
+```
+
 ### Notes
 
 Files starting with a dot are assumed to be private and are not served.

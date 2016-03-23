@@ -2,11 +2,12 @@ $(function(){
 
 	var filemanager = $('.filemanager'),
 		breadcrumbs = $('.breadcrumbs'),
-		fileList = filemanager.find('.data');
+		fileList = filemanager.find('.data'),
+    prefix = $('.prefix').text();
 
 	// Start by fetching the file data from scan route with an AJAX request
 
-	$.get('/scan', function(data) {
+	$.get(prefix+'/scan', function(data) {
 
 		var response = [data],
 			currentPath = '',
@@ -315,7 +316,7 @@ $(function(){
 						itemsLength = 'Empty';
 					}
 
-					var folder = $('<li class="folders"><a href="/'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></a></li>');
+					var folder = $('<li class="folders"><a href="' + prefix + '/'+ f.path +'" title="'+ f.path +'" class="folders">'+icon+'<span class="name">' + name + '</span> <span class="details">' + itemsLength + '</span></a></li>');
 					folder.appendTo(fileList);
 				});
 
@@ -334,7 +335,7 @@ $(function(){
 
 					icon = '<span class="icon file f-' + fileType + '">' + fileType + '</span>';
 
-					var file = $('<li class="files"><a href="/'+ f.path+'" title="'+ f.path +'" class="files">'+icon+'<span class="name">'+ name +'</span> <span class="details">'+fileSize+'</span></a></li>');
+					var file = $('<li class="files"><a href="' + prefix + '/'+ f.path+'" title="'+ f.path +'" class="files">'+icon+'<span class="name">'+ name +'</span> <span class="details">'+fileSize+'</span></a></li>');
 					file.appendTo(fileList);
 				});
 

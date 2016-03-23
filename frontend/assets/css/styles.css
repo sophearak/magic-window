@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+.prefix {
+  display: none;
+}
 
 /*-------------------------
 	Simple reset

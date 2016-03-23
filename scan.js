@@ -1,20 +1,23 @@
 "use strict"
 var fs = require('fs');
 
-module.exports = function scan(dir, alias, depth){
+module.exports = function scan(dir, alias, options){
+
+  let ignore = ['.git', 'node_modules', 'bower_components', 'tmp', 'log', 'Godeps', 'elm-stuff', 'deps', '_build', 'target', 'dist', 'deploy']
+  if(options && options.ignore) ignore = ignore.concat(options.ignore)
+
+  let depth = options ? options.depth : null
 
 	return {
 		name: alias,
 		type: 'folder',
 		path: alias,
-		items: walk(dir, alias, depth+2)
+		items: walk(dir, alias, depth + 2, ignore)
 	};
 
 };
 
-const IGNORED = ['.git', 'node_modules', 'bower_components', 'tmp', 'log', 'Godeps', 'elm-stuff', 'deps', '_build', 'target', 'dist', 'deploy']
-
-function walk(dir, prefix, depth){
+function walk(dir, prefix, depth, ignore){
 
 	prefix = prefix || '';
 
@@ -26,7 +29,7 @@ function walk(dir, prefix, depth){
 
 	return fs.readdirSync(dir).filter(function(f) {
 
-		return f && f[0] != '.' && IGNORED.indexOf(f) == -1; // Ignore hidden files
+		return f && f[0] != '.' && ignore.indexOf(f) == -1; // Ignore hidden files and directories listed in "ignore"
 
 	}).map(function(f){
 
@@ -39,7 +42,7 @@ function walk(dir, prefix, depth){
 				name: f,
 				type: 'folder',
 				path: prefix ? prefix + '/' + p : p,
-				items: walk(p, prefix, depth)
+				items: walk(p, prefix, depth, ignore)
 			};
 
 		}
