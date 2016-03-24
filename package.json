@@ -13,6 +13,7 @@
     "browser",
     "files"
   ],
+  "homepage": "https://extraverse.io",
   "repository": {
     "type": "git",
     "url": "https://github.com/uniqpath/extraverse"
