@@ -39,6 +39,6 @@ if (program.public) {
 
 // Everything is setup. Listen on the port.
 
-app.listen(port);
-
-console.log('Extraverse is running on port ' + port);
+app.listen(port, () => {
+  console.log(`Extraverse is running on port ${port}`);
+});

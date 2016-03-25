@@ -5,6 +5,7 @@
   "main": "app.js",
   "preferGlobal": true,
   "scripts": {
+    "start": "node ./index.js --public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

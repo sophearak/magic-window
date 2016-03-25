@@ -10,11 +10,12 @@ It is based on [martinaglv/cute-files](https://github.com/martinaglv/cute-files)
 
 **Features:**
 
-* Beautiful css-only design.
-* Responsive and retina-ready.
-* Instant file search.
+* Share your code easily with anyone in the world.
 * Syntax highlighting for 150+ computer languages.
+* Beautiful design, responsive and retina-ready.
+* Instant file search.
 * Easy to install and use.
+* Mount inside an existing express.js app so it can show its own source on a specified route (url).
 
 ## Installation
 
