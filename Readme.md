@@ -23,16 +23,16 @@ See a live demo [here (⌐■_■)](http://extraverse.bitcells.com) (this is `ex
 
 **Planned:**
 
-* Other actions on some file types (show pdf, play mp3, download zip etc.)
-* Automatic reloading of files on change.
+* Other actions on some file types (show pdf, play mp3, download zip etc.).
+* Automatic reloading of source code files on change.
 * Diff view of last change pushed to the client via `socket.io`.
 * Ability to share just one file or some files from the folder.
 * Editing functionality with a view of passing test / live css preview.
-* Breadcrumbs on file view (frontend has to be moved to `React` first so it's easy to work with)
+* Breadcrumbs on file view (frontend has to be moved to `React` first so it's easy to work with).
 
 ## Installation
 
-This utility is available on npm, so installation is a breeze. Use the **-g** flag:
+This utility is available on `npm`, so installation is a breeze. Use the **-g** flag:
 
 ```bash
 npm install -g extraverse
@@ -45,6 +45,8 @@ To use it, `cd` into a directory, and run
 ```bash
 extraverse --public
 ```
+
+Magic window (⌐■_■) is now running on `localhost:3000` and `ngrok` url is produced for public sharing.
 
 ## Help
 
