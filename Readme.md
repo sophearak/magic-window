@@ -1,12 +1,10 @@
 # Extraverse
 
-This is a node.js command line utility that turns the current working directory into a pretty online file viewer/editor.
+This is a node.js command line utility that turns the current working directory into a pretty online file viewer (editor in the future).
 
-## Design and inspiration
+See a live demo [here](http://extraverse.bitcells.com).
 
-It is based on [martinaglv/cute-files](https://github.com/martinaglv/cute-files) which is based on [tutorialzine's file browser tutorial](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/). See a live demo [here](http://extraverse.bitcells.com).
-
-[![Cute files preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/)
+[![Extraverse preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/)
 
 **Features:**
 
@@ -78,3 +76,7 @@ app.use('/source', require('extraverse')('/source', { ignore: ['config'] }))
 ### Notes
 
 Files starting with a dot are assumed to be private and are not served.
+
+## Design and inspiration
+
+Design is based on [martinaglv/cute-files](https://github.com/martinaglv/cute-files) which is based on [tutorialzine's file browser tutorial](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/).
