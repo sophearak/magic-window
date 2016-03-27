@@ -15,10 +15,11 @@ See a live demo [here (⌐■_■)](http://extraverse.bitcells.com) (this is `ex
 **Features:**
 
 * Share your code easily with anyone in the world.
-* Syntax highlighting for 150+ computer languages.
-* Beautiful design, responsive and retina-ready.
-* Instant file search.
 * Easy to install and use.
+* Beautiful design, responsive and retina-ready.
+* Syntax highlighting for **150+** computer languages.
+* Font ligatures via [FiraCode](https://github.com/tonsky/FiraCode) font.
+* Instant file search.
 * Mount inside an existing express.js app so it can show its own source on a specified route (url).
 
 **Planned:**
