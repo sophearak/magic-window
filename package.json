@@ -1,18 +1,18 @@
 {
   "name": "extraverse",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Turn any folder on your computer into a magic window",
   "main": "app.js",
-  "preferGlobal": true,
   "scripts": {
     "start": "node ./index.js --public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "cute",
-    "file",
+    "share",
+    "code",
     "browser",
-    "files"
+    "files",
+    "tunnel"
   ],
   "homepage": "https://extraverse.io",
   "repository": {
