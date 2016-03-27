@@ -1,10 +1,16 @@
 # Extraverse
 
-This is a node.js command line utility that turns the current working directory into a pretty online file viewer (editor in the future).
+This is a `node.js` command line utility that turns any folder into a pretty online file viewer (and editor in the future).
 
-See a live demo [here](http://extraverse.bitcells.com).
+See a live demo [here (⌐■_■)](http://extraverse.bitcells.com) (this is `extraverse` presenting itself - `Hey!`).
 
 [![Extraverse preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/)
+
+**Why is this useful?**
+
+* Need to quickly show code to someone so that they can help you?
+* You are working on a project for a client and want to show progress / ask for comments but don't have GitHub repository setup yet?
+* You can probably think of other use cases once you start using it...
 
 **Features:**
 
@@ -14,6 +20,15 @@ See a live demo [here](http://extraverse.bitcells.com).
 * Instant file search.
 * Easy to install and use.
 * Mount inside an existing express.js app so it can show its own source on a specified route (url).
+
+**Planned:**
+
+* Other actions on some file types (show pdf, play mp3, download zip etc.)
+* Automatic reloading of files on change.
+* Diff view of last change pushed to the client via `socket.io`.
+* Ability to share just one file or some files from the folder.
+* Editing functionality with a view of passing test / live css preview.
+* Breadcrumbs on file view (frontend has to be moved to `React` first so it's easy to work with)
 
 ## Installation
 
@@ -63,7 +78,7 @@ Make the current folder available on `<yourip>:12345` on the local network:
 extraverse --port 12345
 ```
 
-### Use inside your express.js app to reveal its source
+### Mount inside an existing `express.js` app to reveal its own source
 
 ```bash
 npm install --save extraverse
@@ -72,6 +87,13 @@ npm install --save extraverse
 ```javascript
 app.use('/source', require('extraverse')('/source', { ignore: ['config'] }))
 ```
+
+Then visit `http://example.com/source` to see all the source code for easy presentation or discussion.
+
+### Known issues
+
+* When used as a mounted app and served with [pm2](https://www.npmjs.com/package/pm2) behind `nginx` (possibly Apache as well), [there are issues](http://serverfault.com/questions/766280/nginx-proxy-pass-cannot-fetch-assets) because of incompatibility between [config package](https://www.npmjs.com/package/config) and `pm2`. Use [forever](https://www.npmjs.com/package/forever) or [Phusion Passenger](https://github.com/phusion/passenger/wiki/Phusion-Passenger:-Node.js-tutorial) instead in production.
+* There will be infinite recursion and stack overflow when trying to share a folder that has a symlink back to itself.
 
 ### Notes
 
