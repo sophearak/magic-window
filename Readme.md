@@ -27,7 +27,11 @@ npm install -g extraverse
 
 ## Usage
 
-To use it, `cd` into a directory, and run `extraverse --public --copy`.
+To use it, `cd` into a directory, and run
+
+```bash
+extraverse --public
+```
 
 ## Help
 
