@@ -7,9 +7,6 @@ var Handlebars = require('handlebars');
 
 module.exports = (prefix, options) => {
 
-  // var template = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/assets/js/script.hbs.js')).toString());
-  // fs.writeFileSync(path.join(__dirname, '/frontend/assets/js/script.js'), template({ prefix }))
-
   var tree = scan('.', 'files', options);
 
   // Ceate a new express app
@@ -18,19 +15,15 @@ module.exports = (prefix, options) => {
 
   // Serve static files from the frontend folder
 
-  var template1 = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/index.html')).toString());
-
   app.use('/assets', express.static(path.join(__dirname, 'frontend/assets')));
 
   // Serve files from the current directory under the /files route
 
-  var template2 = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/code.hbs.html')).toString());
+  var templateCode = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/code.hbs.html')).toString());
 
   app.use('/files', function(req, res) {
-    res.send(template2({ code: fs.readFileSync(path.join(process.cwd(), req.path)).toString(), prefix }))
+    res.send(templateCode({ code: fs.readFileSync(path.join(process.cwd(), req.path)).toString().replace(/\t/g, "  "), prefix }))
   })
-
-  app.use('/static', express.static(__dirname + '/public'));
 
   // This endpoint is requested by our frontend JS
 
@@ -38,9 +31,11 @@ module.exports = (prefix, options) => {
     res.send(tree);
   });
 
+  var homeTemplate = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/index.html')).toString());
+
   //
   app.use('/', function(req, res) {
-    res.send(template1({ prefix }))
+    res.send(homeTemplate({ prefix }))
   });
 
   return app;
