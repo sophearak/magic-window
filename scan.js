@@ -1,18 +1,22 @@
 "use strict"
 var fs = require('fs');
 
-module.exports = function scan(dir, alias, options){
+module.exports = function scan(dir, alias, options) {
 
-  let ignore = ['.git', 'node_modules', 'bower_components', 'tmp', 'log', 'Godeps', 'elm-stuff', 'deps', '_build', 'target', 'dist', 'deploy']
-  if(options && options.ignore) ignore = ignore.concat(options.ignore)
+  let ignore = ['.git', 'node_modules', 'bower_components', 'tmp', 'log', 'Godeps', 'elm-stuff', 'deps', '_build', 'target', 'dist', 'deploy'];
+  if(options && options.ignore) ignore = ignore.concat(options.ignore);
 
-  let depth = options ? options.depth : null
+  let depth = options ? options.depth : null;
+
+  if(depth) {
+    depth += 2;
+  };
 
 	return {
 		name: alias,
 		type: 'folder',
 		path: alias,
-		items: walk(dir, alias, depth + 2, ignore)
+		items: walk(dir, alias, depth, ignore)
 	};
 
 };
@@ -45,14 +49,14 @@ function walk(dir, prefix, depth, ignore){
 				items: walk(p, prefix, depth, ignore)
 			};
 
-		}
+		};
 
 		return {
 			name: f,
 			type: 'file',
 			path: prefix ? prefix + '/' + p : p,
 			size: stat.size
-		}
+		};
 
 	});
 

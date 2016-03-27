@@ -29,6 +29,12 @@ npm install -g extraverse
 
 To use it, `cd` into a directory, and run `extraverse --public --copy`.
 
+## Help
+
+```bash
+extraverse --help
+```
+
 ### Examples
 
 Make the current folder available on `<yourip>:3000` on the local network:

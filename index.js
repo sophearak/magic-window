@@ -12,9 +12,10 @@ var pkg = require( path.join(__dirname, 'package.json') );
 
 program
 	.version(pkg.version)
-  .option('-p, --port <port>', 'Port on which to listen to (defaults to 3000)', parseInt)
-  .option('-P, --public', 'Allow public access via ngrok')
-	.option('-c, --copy', 'Copy ngrok url to clipboard')
+  .description('Turn any folder on your computer into a magic window')
+  .option('-p, --port <port>', 'Port on which to run (defaults to 3000)', parseInt)
+  .option('-P, --public', 'Allow secret access on the internet (uses ngrok)')
+	.option('-c, --copy', 'Copy url for public sharing to clipboard')
 	.parse(process.argv);
 
 var port = program.port || 3000;
@@ -40,5 +41,5 @@ if (program.public) {
 // Everything is setup. Listen on the port.
 
 app.listen(port, () => {
-  console.log(`Extraverse is running on port ${port}`);
+  console.log("%s is running on %s", colors.blue("Extraverse"), colors.magenta(`port ${port}`));
 });
