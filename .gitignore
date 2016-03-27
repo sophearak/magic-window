@@ -3,3 +3,7 @@ node_modules
 *~
 todo.txt
 priv
+Readme.html
+start_server
+.deploy
+.postdeploy

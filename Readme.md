@@ -2,9 +2,9 @@
 
 This is a `node.js` command line utility that turns any folder into a pretty online file viewer (and editor in the future).
 
-See a live demo [here (⌐■_■)](http://extraverse.bitcells.com) (this is `extraverse` presenting itself - `Hey!`).
+See a live demo [here (⌐■_■)](https://demo.extraverse.io) (this is `extraverse` presenting itself - `Hey!`).
 
-[![Extraverse preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/)
+[![Extraverse preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](https://demo.extraverse.io)
 
 **Why is this useful?**
 
