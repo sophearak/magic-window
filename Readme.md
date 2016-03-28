@@ -2,7 +2,7 @@
 
 This is a `JavaScript` tool that turns **any folder on your computer** into a **pretty online file viewer** (and editor in the future).
 
-See a [live demo here (⌐■_■)](https://demo.extraverse.io) — this is `extraverse` presenting itself → `Hey!`.
+See [live demo here (⌐■_■)](https://demo.extraverse.io) — this is `extraverse` presenting itself → `Hey!`.
 
 [![Extraverse preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](https://demo.extraverse.io)
 
@@ -113,6 +113,8 @@ Design is based on [martinaglv/cute-files](https://github.com/martinaglv/cute-fi
 
 Project Home: [NpmJs](https://www.npmjs.com/package/extraverse)
 
+Main Sponsor: [Subcults](https://subcults.com)
+
 Main Author: [davidhq](https://davidkrmpotic.com)
 
-Main Sponsor: [Subcults](https://subcults.com)
+Add me on LinkedIn if you want to send pull requests and make **Extraverse** better ¯\(º_o)/¯

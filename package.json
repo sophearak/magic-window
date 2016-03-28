@@ -1,6 +1,6 @@
 {
   "name": "extraverse",
-  "version": "1.0.25",
+  "version": "1.0.27",
   "description": "Turn any folder on your computer into a magic window",
   "main": "app.js",
   "scripts": {
