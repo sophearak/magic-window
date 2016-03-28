@@ -1,7 +1,6 @@
 {
     "uid": "extraverse",
     "append": true,
-    "watch": true,
     "script": "index.js",
     "args": ["-p", "4000"]
 }

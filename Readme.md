@@ -1,16 +1,19 @@
 # Extraverse
 
-This is a `node.js` command line utility that turns any folder into a pretty online file viewer (and editor in the future).
+This is a `JavaScript` tool that turns **any folder on your computer** into a **pretty online file viewer** (and editor in the future).
 
-See a live demo [here (⌐■_■)](https://demo.extraverse.io) (this is `extraverse` presenting itself - `Hey!`).
+See a [live demo here (⌐■_■)](https://demo.extraverse.io) — this is `extraverse` presenting itself → `Hey!`.
 
 [![Extraverse preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](https://demo.extraverse.io)
 
-**Why is this useful?**
+If you need instructions on how to best set up your `node` environment, please [look here](https://subcults.com/wiki/Code-Collaboration.pdf). You only have to do this once.
 
+**Why is Extraverse so astonishing / magnificent / awe-inspiring and humble?**
+
+* Built in the spirit of Open Source which has already radically changed the world.
 * Need to quickly show code to someone so that they can help you?
-* You are working on a project for a client and want to show progress / ask for comments but don't have GitHub repository setup yet?
-* You can probably think of other use cases once you start using it...
+* You are working on a project for a client and want to show progress / ask for comments but don't have git/hub repository set up yet?
+* You will find other use cases when you start using it...
 
 **Features:**
 
@@ -20,16 +23,16 @@ See a live demo [here (⌐■_■)](https://demo.extraverse.io) (this is `extrav
 * Syntax highlighting for **150+** computer languages.
 * Font ligatures via [FiraCode](https://github.com/tonsky/FiraCode) font.
 * Instant file search.
-* Mount inside an existing express.js app so it can show its own source on a specified route (url).
+* Mount inside an existing `express.js` app so it can show its own source.
 
 **Planned:**
 
-* Other actions on some file types (show pdf, play mp3, download zip etc.).
-* Automatic reloading of source code files on change.
+* Breadcrumbs on file view.
+* Other actions on particular file types (show `pdf`, play `mp3`, download `zip` etc.).
+* Automatic reloading of source code on change.
 * Diff view of last change pushed to the client via `socket.io`.
 * Ability to share just one file or some files from the folder.
-* Editing functionality with a view of passing test / live css preview.
-* Breadcrumbs on file view (frontend has to be moved to `React` first so it's easy to work with).
+* Editing functionality with a view of passing tests / live css preview.
 
 ## Installation
 
@@ -102,6 +105,14 @@ Then visit `http://example.com/source` to see all the source code for easy prese
 
 Files starting with a dot are assumed to be private and are not served.
 
-## Design and inspiration
+### Design and inspiration
 
 Design is based on [martinaglv/cute-files](https://github.com/martinaglv/cute-files) which is based on [tutorialzine's file browser tutorial](http://tutorialzine.com/2014/09/cute-file-browser-jquery-ajax-php/).
+
+### Info
+
+Project Home: [NpmJs](https://www.npmjs.com/package/extraverse)
+
+Main Author: [davidhq](https://davidkrmpotic.com)
+
+Main Sponsor: [Subcults](https://subcults.com)

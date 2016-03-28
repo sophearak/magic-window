@@ -19,10 +19,10 @@ module.exports = (prefix, options) => {
 
   // Serve files from the current directory under the /files route
 
-  var templateCode = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/code.hbs.html')).toString());
+  var codeTemplate = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/code.hbs.html')).toString());
 
   app.use('/files', function(req, res) {
-    res.send(templateCode({ code: fs.readFileSync(path.join(process.cwd(), req.path)).toString().replace(/\t/g, "  "), prefix }))
+    res.send(codeTemplate({ code: fs.readFileSync(path.join(process.cwd(), req.path)).toString().replace(/\t/g, "  "), prefix }))
   })
 
   // This endpoint is requested by our frontend JS
@@ -31,9 +31,10 @@ module.exports = (prefix, options) => {
     res.send(tree);
   });
 
-  var homeTemplate = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/index.html')).toString());
+  var homeTemplate = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/index.hbs.html')).toString());
 
-  //
+  // Main entry
+
   app.use('/', function(req, res) {
     res.send(homeTemplate({ prefix }))
   });
