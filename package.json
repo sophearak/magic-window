@@ -27,7 +27,8 @@
     "copy-paste": "^1.1.4",
     "express": "^4.9.4",
     "handlebars": "^4.0.5",
-    "ngrok": "^2.1.6"
+    "ngrok": "^2.1.6",
+    "portfinder": "^1.0.3"
   },
   "bin": {
     "extraverse": "index.js"

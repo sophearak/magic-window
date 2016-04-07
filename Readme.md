@@ -84,6 +84,8 @@ Make the current folder available on `<yourip>:12345` on the local network:
 extraverse --port 12345
 ```
 
+If port you are trying to use is already used, `extraverse` will try the next available one.
+
 ### Mount inside an existing `express.js` app to reveal its own source
 
 ```bash

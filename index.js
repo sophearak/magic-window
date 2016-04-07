@@ -4,6 +4,7 @@ var path = require('path');
 var copyPaste = require("copy-paste");
 var colors = require('colors')
 var app = require('./app')('')
+var portfinder = require('portfinder');
 
 // Parse command line options
 var program = require('commander');
@@ -18,28 +19,24 @@ program
 	.option('-c, --copy', 'Copy url for public sharing to clipboard')
 	.parse(process.argv);
 
-var port = program.port || 3000;
+portfinder.basePort = program.port || 3000;
 
-// Scan the directory in which the script was called. It will
-// add the 'files/' prefix to all files and folders, so that
-// download links point to our /files route
+portfinder.getPort((err, port) => {
 
-// Share over ngrok if Public
+  // Share over ngrok if Public
+  if (program.public) {
+    var ngrok = require('ngrok');
+    ngrok.connect(port, function (err, url) {
+      let copied = "";
+      if(program.copy) {
+        copied = "(copied to clipboard)"
+        copyPaste.copy(url);
+      }
+      console.log(`Public URL: ${colors.yellow(url)} ${colors.green(copied)}`);
+    });
+  }
 
-if (program.public) {
-  var ngrok = require('ngrok');
-  ngrok.connect(port, function (err, url) {
-    let copied = "";
-    if(program.copy) {
-      copied = "(copied to clipboard)"
-      copyPaste.copy(url);
-    }
-    console.log(`Public URL: ${colors.yellow(url)} ${colors.green(copied)}`);
+  app.listen(port, () => {
+    console.log("%s is running on %s", colors.blue("Extraverse"), colors.magenta(`port ${port}`));
   });
-}
-
-// Everything is setup. Listen on the port.
-
-app.listen(port, () => {
-  console.log("%s is running on %s", colors.blue("Extraverse"), colors.magenta(`port ${port}`));
 });
