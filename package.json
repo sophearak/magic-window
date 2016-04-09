@@ -1,6 +1,6 @@
 {
-  "name": "extraverse",
-  "version": "1.0.27",
+  "name": "magic-window",
+  "version": "1.0.3",
   "description": "Turn any folder on your computer into a magic window",
   "main": "app.js",
   "scripts": {
@@ -14,16 +14,17 @@
     "files",
     "tunnel"
   ],
-  "homepage": "https://extraverse.io",
+  "homepage": "https://magic.uniqpath.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uniqpath/extraverse"
+    "url": "https://github.com/uniqpath/magic-window"
   },
   "author": "davidhq",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.3.0",
+    "content-disposition": "^0.5.1",
     "copy-paste": "^1.1.4",
     "express": "^4.9.4",
     "handlebars": "^4.0.5",
@@ -31,7 +32,7 @@
     "portfinder": "^1.0.3"
   },
   "bin": {
-    "extraverse": "index.js"
+    "magic": "index.js"
   },
   "readmeFilename": "Readme.md",
   "engines": {

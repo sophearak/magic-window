@@ -37,6 +37,6 @@ portfinder.getPort((err, port) => {
   }
 
   app.listen(port, () => {
-    console.log("%s is running on %s", colors.blue("Extraverse"), colors.magenta(`port ${port}`));
+    console.log("%s is running on %s", colors.blue("Magic"), colors.magenta(`port ${port}`));
   });
 });

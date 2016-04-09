@@ -1,14 +1,14 @@
-# Extraverse
+# Magic Window
 
 This is a `JavaScript` tool that turns **any folder on your computer** into a **pretty online file viewer** (and editor in the future).
 
-See [live demo here (⌐■_■)](https://demo.extraverse.io) — this is `extraverse` presenting itself → `Hey!`.
+See [live demo here (⌐■_■)](https://magic.uniqpath.com) — this is `magic-window` presenting itself → `Hey!`.
 
-[![Extraverse preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](https://demo.extraverse.io)
+[![magic-window preview](http://cdn.tutorialzine.com/wp-content/uploads/2014/09/file-and-folder-grid.jpg)](https://demo.magic-window.io)
 
 If you need instructions on how to best set up your `node` environment, please [look here](https://subcults.com/wiki/Code-Collaboration.pdf). You only have to do this once.
 
-**Why is Extraverse so astonishing / magnificent / awe-inspiring and humble?**
+**Why is magic-window so magnificent / awe-inspiring and humble?**
 
 * Built in the spirit of Open Source which has already radically changed the world.
 * Need to quickly show code to someone so that they can help you?
@@ -24,6 +24,7 @@ If you need instructions on how to best set up your `node` environment, please [
 * Font ligatures via [FiraCode](https://github.com/tonsky/FiraCode) font.
 * Instant file search.
 * Mount inside an existing `express.js` app so it can show its own source.
+* If the local port you're trying to use it on is taken, it will choose the first available one.
 
 **Planned:**
 
@@ -39,7 +40,7 @@ If you need instructions on how to best set up your `node` environment, please [
 This utility is available on `npm`, so installation is a breeze. Use the **-g** flag:
 
 ```bash
-npm install -g extraverse
+npm install -g magic-window
 ```
 
 ## Usage
@@ -47,7 +48,7 @@ npm install -g extraverse
 To use it, `cd` into a directory, and run
 
 ```bash
-extraverse --public
+magic --public
 ```
 
 Magic window (⌐■_■) is now running on `localhost:3000` and `ngrok` url is produced for public sharing.
@@ -55,7 +56,7 @@ Magic window (⌐■_■) is now running on `localhost:3000` and `ngrok` url is 
 ## Help
 
 ```bash
-extraverse --help
+magic --help
 ```
 
 ### Examples
@@ -63,37 +64,37 @@ extraverse --help
 Make the current folder available on `<yourip>:3000` on the local network:
 
 ```bash
-extraverse
+magic
 ```
 
 Allow public access:
 
 ```bash
-extraverse --public
+magic --public
 ```
 
 Copy `ngrok` url to clipboard:
 
 ```bash
-extraverse --public --copy
+magic --public --copy
 ```
 
 Make the current folder available on `<yourip>:12345` on the local network:
 
 ```bash
-extraverse --port 12345
+magic --port 12345
 ```
 
-If port you are trying to use is already used, `extraverse` will try the next available one.
+If port you are trying to use is already used, `magic-window` will try the next available one.
 
 ### Mount inside an existing `express.js` app to reveal its own source
 
 ```bash
-npm install --save extraverse
+npm install --save magic-window
 ```
 
 ```javascript
-app.use('/source', require('extraverse')('/source', { ignore: ['config'] }))
+app.use('/source', require('magic-window')('/source', { ignore: ['config'] }))
 ```
 
 Then visit `http://example.com/source` to see all the source code for easy presentation or discussion.
@@ -113,10 +114,10 @@ Design is based on [martinaglv/cute-files](https://github.com/martinaglv/cute-fi
 
 ### Info
 
-Project Home: [NpmJs](https://www.npmjs.com/package/extraverse)
+Project Home: [NpmJs](https://www.npmjs.com/package/magic-window)
 
 Main Sponsor: [Subcults](https://subcults.com)
 
 Main Author: [davidhq](https://davidkrmpotic.com)
 
-Add me on LinkedIn if you want to send pull requests and make **Extraverse** better ¯\(º_o)/¯
+Add me on LinkedIn if you want to send pull requests and make **magic-window** better ¯\(º_o)/¯
