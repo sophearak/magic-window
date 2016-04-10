@@ -15,7 +15,7 @@ program
 	.version(pkg.version)
   .description('Turn any folder on your computer into a magic window')
   .option('-p, --port <port>', 'Port on which to run (defaults to 3000)', parseInt)
-  .option('-P, --public', 'Allow secret access over the internet (uses ngrok)')
+  .option('-P, --private', 'Only share locall')
 	.option('-c, --copy', 'Copy url for public sharing to clipboard')
 	.parse(process.argv);
 
@@ -24,7 +24,7 @@ portfinder.basePort = program.port || 3000;
 portfinder.getPort((err, port) => {
 
   // Share over ngrok if Public
-  if (program.public) {
+  if (!program.private) {
     var ngrok = require('ngrok');
     ngrok.connect(port, function (err, url) {
       let copied = "";

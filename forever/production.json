@@ -1,5 +1,5 @@
 {
-    "uid": "extraverse",
+    "uid": "magic-window",
     "append": true,
     "script": "index.js",
     "args": ["-p", "5000"]

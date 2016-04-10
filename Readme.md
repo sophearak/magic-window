@@ -48,7 +48,7 @@ npm install -g magic-window
 To use it, `cd` into a directory, and run
 
 ```bash
-magic --public
+magic
 ```
 
 Magic window (⌐■_■) is now running on `localhost:3000` and `ngrok` url is produced for public sharing.
@@ -67,16 +67,16 @@ Make the current folder available on `<yourip>:3000` on the local network:
 magic
 ```
 
-Allow public access:
-
-```bash
-magic --public
-```
-
 Copy `ngrok` url to clipboard:
 
 ```bash
-magic --public --copy
+magic --copy
+```
+
+Without public access:
+
+```bash
+magic --private
 ```
 
 Make the current folder available on `<yourip>:12345` on the local network:
