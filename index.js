@@ -15,7 +15,7 @@ program
 	.version(pkg.version)
   .description('Turn any folder on your computer into a magic window')
   .option('-p, --port <port>', 'Port on which to run (defaults to 3000)', parseInt)
-  .option('-P, --private', 'Only share locall')
+  .option('-P, --private', 'Only local share')
 	.option('-c, --copy', 'Copy url for public sharing to clipboard')
 	.parse(process.argv);
 

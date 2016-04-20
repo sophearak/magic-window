@@ -1,6 +1,6 @@
 {
   "name": "magic-window",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Turn any folder on your computer into a magic window",
   "main": "app.js",
   "scripts": {
