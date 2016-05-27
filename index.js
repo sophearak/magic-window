@@ -16,7 +16,7 @@ program
   .description('Turn any folder on your computer into a magic window')
   .option('-p, --port <port>', 'Port on which to run (defaults to 3000)', parseInt)
   .option('-P, --private', 'Only local share')
-	.option('-c, --copy', 'Copy url for public sharing to clipboard')
+	.option('-nc, --nocopy', 'Copy url for public sharing to clipboard')
 	.parse(process.argv);
 
 portfinder.basePort = program.port || 3000;
@@ -28,7 +28,7 @@ portfinder.getPort((err, port) => {
     var ngrok = require('ngrok');
     ngrok.connect(port, function (err, url) {
       let copied = "";
-      if(program.copy) {
+      if(!program.nocopy) {
         copied = "(copied to clipboard)"
         copyPaste.copy(url);
       }
