@@ -3,6 +3,7 @@ var express = require('express');
 var scan = require('./scan');
 var path = require('path');
 var fs = require('fs');
+var isBinaryFile = require("isbinaryfile");
 var Handlebars = require('handlebars');
 
 module.exports = (prefix, options) => {
@@ -20,14 +21,24 @@ module.exports = (prefix, options) => {
   // Serve files from the current directory under the /files route
 
   var codeTemplate = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/code.hbs.html')).toString());
+  var videoTemplate = Handlebars.compile(fs.readFileSync(path.join(__dirname, '/frontend/video.hbs.html')).toString());
 
   app.use('/files', function(req, res) {
-    res.send(codeTemplate({ code: fs.readFileSync(path.join(process.cwd(), req.path)).toString().replace(/\t/g, "  "), prefix }))
+    var ext = path.extname(req.path).toLowerCase();
+    var filePath = path.join(process.cwd(), decodeURI(req.path))
+
+    if((ext == ".mp4" || ext == ".mkv") && !req.query.download) {
+      res.send(videoTemplate({ src: `/files${req.path}?download=1` }));
+    } else if(isBinaryFile.sync(filePath)) {
+      res.sendFile(filePath);
+    } else {
+      res.send(codeTemplate({ code: fs.readFileSync(filePath).toString().replace(/\t/g, "  "), prefix }));
+    }
   })
 
   // This endpoint is requested by our frontend JS
 
-  app.get('/scan', function(req,res){
+  app.get('/scan', function(req,res) {
     res.send(tree);
   });
 
@@ -36,7 +47,7 @@ module.exports = (prefix, options) => {
   // Main entry
 
   app.use('/', function(req, res) {
-    res.send(homeTemplate({ prefix }))
+    res.send(homeTemplate({ prefix }));
   });
 
   return app;

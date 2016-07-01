@@ -28,6 +28,7 @@
     "copy-paste": "^1.1.4",
     "express": "^4.9.4",
     "handlebars": "^4.0.5",
+    "isbinaryfile": "^3.0.0",
     "ngrok": "^2.1.6",
     "portfinder": "^1.0.3"
   },
