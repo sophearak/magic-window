@@ -8,11 +8,11 @@ See [live demo here (⌐■_■)](https://magic.uniqpath.com) — this is `magic
 
 If you need instructions on how to best set up your `node` environment, please [look here](https://subcults.com/wiki/Code-Collaboration.pdf). You only have to do this once.
 
-**Why is magic-window so magnificent / awe-inspiring and humble?**
+**Why is magic-window cool?**
 
-* Built in the spirit of Open Source which has already radically changed the world.
-* Need to quickly show code to someone so that they can help you?
-* You are working on a project for a client and want to show progress / ask for comments but don't have git/hub repository set up yet?
+* Built in the spirit of Open Source.
+* Need to share audio, books and video quickly with friends?
+* Need to easily show code to someone so that they can help you?
 * You will find other use cases when you start using it...
 
 **Features:**
@@ -29,7 +29,6 @@ If you need instructions on how to best set up your `node` environment, please [
 **Planned:**
 
 * Breadcrumbs on file view.
-* Other actions on particular file types (show `pdf`, play `mp3`, download `zip` etc.).
 * Automatic reloading of source code on change.
 * Diff view of last change pushed to the client via `socket.io`.
 * Ability to share just one file or some files from the folder.
