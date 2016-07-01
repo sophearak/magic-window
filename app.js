@@ -27,6 +27,8 @@ module.exports = (prefix, options) => {
     var ext = path.extname(req.path).toLowerCase();
     var filePath = path.join(process.cwd(), decodeURI(req.path))
 
+    //console.log(req.path)
+
     if((ext == ".mp4" || ext == ".mkv") && !req.query.download) {
       res.send(videoTemplate({ src: `/files${req.path}?download=1` }));
     } else if(isBinaryFile.sync(filePath)) {

@@ -27,6 +27,11 @@ portfinder.getPort((err, port) => {
   if (!program.private) {
     var ngrok = require('ngrok');
     ngrok.connect(port, function (err, url) {
+      if(err) {
+        console.log(err);
+        console.log(colors.red("You probably have a tunnel running already"))
+        process.exit();
+      }
       let copied = "";
       if(!program.nocopy) {
         copied = "(copied to clipboard)"
